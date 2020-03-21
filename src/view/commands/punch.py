@@ -6,6 +6,7 @@ def punched_out(database, hours):
   print('Punching out at %s hours for "%s".' % (hours, name))
   return True
 
+
 def punched_in(database):
   name = database['name']
   hours = round(database['totalHours'], 2)
