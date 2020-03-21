@@ -11,4 +11,4 @@ def deleted(job):
 
 
 def notFound(job):
-  print('Job "%s" does not exist.' % job)
+  print('The job "%s" does not exist.' % job)
