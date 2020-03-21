@@ -6,7 +6,7 @@ import json
 import os
 
 
-# SECTION FS - Utility functions for writing/reading files.
+# SECTION IO - Utility functions related to IO.
 # =====================================================
 def absolute_path(file = '', path = '', isState = False):
   subdirectory = '' if isState else '/database' 
