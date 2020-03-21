@@ -21,11 +21,8 @@ def handler(command, argument):
   
 
 def punch_out(database):
-  new_total_hours = timer.get_new_hours(
-    timer.current_time(),
-    database['time'],
-  ) + database['totalHours']
-
+  new_total_hours = timer.total_hours(database)
+  
   db.write({
     'totalHours': new_total_hours,
     'time': 0,
