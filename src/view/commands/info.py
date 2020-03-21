@@ -1,11 +1,15 @@
 # SECTION  VIEW - The command.info.py view.
 # =====================================================
 
-def displayHours(hours, job):
-  print('You are at %s hours for "%s".' % (hours, job))
+def displayInformation(database, hours):
+  print('\n'.join([
+    'Name: %s' % database['name'],
+    'Punched: %s' % database['lastAction'],
+    'Total hours: %s' % hours,
+  ]))
   return True
 
 
 def invalidJob(job):
-  print('Unable to show hours for "%s"; it does not exist.' % job)
+  print('Unable to show information for "%s"; it does not exist.' % job)
   return False

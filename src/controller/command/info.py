@@ -19,9 +19,8 @@ def handler(command, argument):
     else:
       return view.invalidJob(file)
 
-  
   hours = round(total_hours(database), 2)
-  return view.displayHours(hours, file)
+  return view.displayInformation(database, hours)
     
 
 def total_hours(database):
