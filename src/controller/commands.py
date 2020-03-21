@@ -2,13 +2,12 @@
 # =====================================================
 # Internal
 import model.db as db
-from controller.command import (
-  hours,
-  job,
-  listall, 
-  punch,
-  rm,
-)
+import controller.command as command
+import command.punch as punch
+import command.job as job
+import command.rm as rm
+import command.list as lst
+import command.hours as hours
 
 
 # SECTION  HANDLER - The command handler.
