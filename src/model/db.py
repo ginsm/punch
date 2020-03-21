@@ -24,9 +24,10 @@ def write(data, file):
 
 
 def read(file):
-  return fs.readFile(
-    fs.absolute_path(file, __dirname),
-  )
+  if exists(file):
+    return fs.readFile(
+      fs.absolute_path(file, __dirname),
+    )
 
 
 def delete(file):
@@ -47,10 +48,11 @@ def set_state(data):
   )
 
 
-def get_state():
-  return fs.readFile(
-    fs.absolute_path('state', __dirname, True),
-  )
+def get_state(file = 'state'):
+  file_path = fs.absolute_path(file, __dirname, True)
+  if os.path.exists(file_path):
+    return fs.readFile(file_path)
+  return False
 
 
 # SECTION HELPER - Functions that are used by both.
