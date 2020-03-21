@@ -1,4 +1,4 @@
-# SECTION  HANDLER - The command handler.
+# SECTION  VIEW - Commands.py view.
 # =====================================================
 def createFirstJob():
   print(
