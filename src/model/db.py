@@ -15,7 +15,7 @@ __dirname = os.path.dirname(__file__)
 # SECTION DATABASE - Controls the database files.
 # =====================================================
 def write(data, file):
-  file_existed = False if exists(file) else True
+  file_existed = True if exists(file) else False
   fs.writeFile(
     data,
     fs.absolute_path(file, __dirname),
@@ -49,14 +49,13 @@ def set_state(data):
 
 
 def get_state(file = 'state'):
-  file_path = fs.absolute_path(file, __dirname, True)
-  if os.path.exists(file_path):
-    return fs.readFile(file_path)
+  if exists(file, True):
+    return fs.readFile(fs.absolute_path(file, __dirname, True))
   return False
 
 
 # SECTION HELPER - Functions that are used by both.
 # =====================================================
-def exists(file = ''):
-  file = fs.absolute_path(file, __dirname)
+def exists(file = '', isState = False):
+  file = fs.absolute_path(file, __dirname, isState)
   return os.path.exists(file)
