@@ -16,7 +16,7 @@ __dirname = os.path.dirname(__file__)
 # =====================================================
 def write(data, file):
   file_existed = True if exists(file) else False
-  fs.writeFile(
+  fs.write_file(
     data,
     fs.absolute_path(file, __dirname),
   )
@@ -42,7 +42,7 @@ def delete(file):
 # SECTION STATE - Controls the state of the application.
 # =====================================================
 def set_state(data):
-  return fs.writeFile(
+  return fs.write_file(
     data,
     fs.absolute_path('state', __dirname, True),
   )
