@@ -3,6 +3,7 @@
 # Internal
 import model.db as db
 import util.timer as timer
+import view.commands.punch as view
 
 
 # SECTION HANDLER - Punch in and out handlers.
@@ -32,7 +33,7 @@ def punch_out(database):
     'name': database['name'],
   }, database['name'])
 
-  # view.punched_out(database['name'], new_total_hours)
+  return view.punched_out(database, new_total_hours)
 
 
 def punch_in(database):
@@ -43,5 +44,5 @@ def punch_in(database):
     'name': database['name'],
   }, database['name'])
 
-  # view.punched_in(database)
+  return view.punched_in(database)
   
