@@ -1,21 +1,21 @@
 # SECTION IMPORTS - External and internal imports.
 # =====================================================
-# Internal
-import model.db as db
+# External
 import re
+
+# Internal
+import view.commands.job as view
+import model.db as db
 
 
 # SECTION HANDLER - Job selection handlers.
 # =====================================================
 def handler(command, argument):
   if argument is None:
-    print('Current Job: %s' % str(db.get_state()['job']))
-    # return view.currentJob()
-    return
+    return view.currentJob(str(db.get_state()['job']))
 
   if re.search('\/', argument) is not None:
-    # return view.invalidJobName(argument)
-    return False
+    return view.invalidJobName(argument)
 
   db.set_state({'job': argument})
 
@@ -24,4 +24,4 @@ def handler(command, argument):
     schema['name'] = argument
     db.write(schema, argument)
   
-  # return view.newSelectedJob(argument)
+  return view.newSelectedJob(argument)
