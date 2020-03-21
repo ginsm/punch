@@ -27,7 +27,7 @@ def punch_out(database):
 
   db.write({
     'totalHours': new_total_hours,
-    'time': None,
+    'time': 0,
     'lastAction': 'out',
     'name': database['name'],
   }, database['name'])
