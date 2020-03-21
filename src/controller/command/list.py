@@ -1,7 +1,10 @@
 # SECTION IMPORTS - External and internal imports.
 # =====================================================
-# Internal
+# External
 import os
+
+# Internal
+import view.commands.list as view
 from model.db import __dirname
 
 
@@ -14,6 +17,4 @@ def handler(command, argument):
     for f in os.listdir(path)
     if os.path.isfile(os.path.join(path, f))
   ]
-  # return view.listJobs(databases)
-  output = '\n'.join(databases)
-  print(output)
+  return view.listJobs(databases)
