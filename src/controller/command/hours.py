@@ -3,6 +3,7 @@
 # Internal
 import model.db as db
 import util.timer as timer
+import view.commands.hours as view
 
 
 # SECTION HANDLER - Get amount of hours for a job.
@@ -12,11 +13,14 @@ def handler(command, argument):
     file = db.get_state()['job']
     database = db.read(file)
   else:
-    database = db.read(argument)
+    file = argument
+    if db.exists(file):
+      database = db.read(file)
+    else:
+      return view.invalidJob(file)
 
   hours = round(total_hours(database), 2)
-  print(hours)
-  # return view.displayHours(hours)
+  return view.displayHours(hours, file)
     
 
 
