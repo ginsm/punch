@@ -9,7 +9,7 @@ import controller.commands as commands
 
 
 
-# SECTION Resolve command and argument
+# SECTION Resolve command and argument.
 # =====================================================
 # Get the command line arguments
 argv = sys.argv[1:]
