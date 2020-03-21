@@ -12,12 +12,11 @@ def handler(command, argument):
     # return view.currentJob()
     return
 
-  job = argument
-  db.set_state({'job': job})
+  db.set_state({'job': argument})
 
-  if not db.exists(job):
+  if not db.exists(argument):
     schema = db.get_state('schema')
-    schema['name'] = job
-    db.write(schema, job)
+    schema['name'] = argument
+    db.write(schema, argument)
   
   # return view.newSelectedJob()
