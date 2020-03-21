@@ -7,6 +7,7 @@ import command.punch as punch
 import command.job as job
 import command.rm as rm
 import command.list as lst
+import command.hours as hours
 
 
 # SECTION  HANDLER - The command handler.
@@ -26,6 +27,7 @@ def handle(command, argument):
     'job': job.handler,
     'rm': rm.handler,
     'list': lst.handler,
+    'hours': hours.handler,
   }
 
   if (command not in handlers):
