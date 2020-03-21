@@ -3,7 +3,7 @@
 import time
 
 
-# SECTION METHODS - Helps keep track of time.
+# SECTION TIMER - Helps keep track of time/hours.
 # =====================================================
 def current_time():
   return round(time.time())

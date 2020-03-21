@@ -6,6 +6,8 @@ import json
 import os
 
 
+# SECTION FS - Utility functions for writing/reading files.
+# =====================================================
 def absolute_path(file = '', path = '', isState = False):
   subdirectory = '' if isState else '/database' 
   absolute = '%s%s/%s.json' % (path, subdirectory, file)

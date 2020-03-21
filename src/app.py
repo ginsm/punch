@@ -8,7 +8,6 @@ import controller.process as process
 import controller.commands as commands
 
 
-
 # SECTION Resolve command and argument.
 # =====================================================
 # Get the command line arguments
