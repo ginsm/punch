@@ -2,20 +2,19 @@
 # =====================================================
 # Internal
 import model.db as db
-import controller.command as command
-import command.punch as punch
-import command.job as job
-import command.rm as rm
-import command.list as lst
-import command.hours as hours
+from controller.command import (
+  hours,
+  job,
+  listall, 
+  punch,
+  rm,
+)
 
 
 # SECTION  HANDLER - The command handler.
 # =====================================================
 def handle(command, argument):
-  # Ensure the state exists
-  state = db.get_state()
-  if state is False:
+  if db.get_state() is False:
     # return view.createFirstJob()
     return False
 
@@ -26,7 +25,7 @@ def handle(command, argument):
     'punch': punch.handler,
     'job': job.handler,
     'rm': rm.handler,
-    'list': lst.handler,
+    'list': listall.handler,
     'hours': hours.handler,
   }
 
