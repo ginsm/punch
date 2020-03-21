@@ -34,6 +34,8 @@ def delete(file):
     os.remove(
       fs.absolute_path(file, __dirname)
     )
+    return True
+  return False
 
 
 # SECTION STATE - Controls the state of the application.
