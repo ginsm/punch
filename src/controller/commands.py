@@ -11,7 +11,7 @@ import command.info as info
 import view.commands as view
 
 
-# SECTION  HANDLER - The command handler.
+# SECTION  HANDLER - Delegates to command handler.
 # =====================================================
 def handle(command, argument):
   if db.get_state() is False:
