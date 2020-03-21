@@ -11,6 +11,6 @@
 | :--- | :--- | :--- |
 | punch | Toggle between being punched in or out | None |
 | punch track `[argument]` | Begin tracking a new project | None or String
-| punch info `[argument]` | Outputs current or specified project's information | None or String |
+| punch info `[argument]` | Output current or specified project's information | None or String |
 | punch rm `<argument>` | Stop tracking a specific job | String |
 | punch list | Output the jobs you are currently tracking | None |
