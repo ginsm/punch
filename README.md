@@ -9,8 +9,8 @@
 
 | Command | Description | Argument Type |
 | :--- | :--- | :--- |
-| punch | Toggles punched in status | None |
+| punch | Toggle between being punched in or out | None |
+| punch track `[argument]` | Begin tracking a new project | None or String
+| punch info `[argument]` | Outputs current or specified project's information | None or String |
+| punch rm `<argument>` | Stop tracking a specific job | String |
 | punch list | Output the jobs you are currently tracking | None |
-| punch job `[argument]` | Select a new job (String) or output current job name (None) | None or String
-| punch hours `[argument]` | Outputs specified job hours (String) or current job hours (None) | None or String |
-| punch rm `<argument>` | Removes a job | String |

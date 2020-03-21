@@ -1,8 +1,8 @@
-# SECTION  VIEW - The command.hours.py view.
+# SECTION  VIEW - The command.info.py view.
 # =====================================================
 
 def displayHours(hours, job):
-  print('You are currently %s hours into "%s"' % (hours, job))
+  print('You are at %s hours for "%s".' % (hours, job))
   return True
 
 

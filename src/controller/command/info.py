@@ -3,10 +3,10 @@
 # Internal
 import model.db as db
 import util.timer as timer
-import view.commands.hours as view
+import view.commands.info as view
 
 
-# SECTION HANDLER - Get amount of hours for a job.
+# SECTION HANDLER - Get the information about a project.
 # =====================================================
 def handler(command, argument):
   if argument is None:
@@ -19,11 +19,10 @@ def handler(command, argument):
     else:
       return view.invalidJob(file)
 
+  
   hours = round(total_hours(database), 2)
   return view.displayHours(hours, file)
     
-
-
 
 def total_hours(database):
   if database['time'] == 0:

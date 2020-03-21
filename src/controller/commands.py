@@ -4,10 +4,10 @@
 import model.db as db
 import controller.command as command
 import command.punch as punch
-import command.job as job
+import command.track as track
 import command.rm as rm
 import command.list as listall
-import command.hours as hours
+import command.info as info
 import view.commands as view
 
 
@@ -23,14 +23,14 @@ def handle(command, argument):
   handlers = {
     'punch': punch.handler,
     'p': punch.handler,
-    'job': job.handler,
-    'j': job.handler,
+    'track': track.handler,
+    't': track.handler,
     'rm': rm.handler,
     'r': rm.handler,
     'list': listall.handler,
     'l': listall.handler,
-    'hours': hours.handler,
-    'h': hours.handler,
+    'info': info.handler,
+    'i': info.handler,
   }
 
   if (command not in handlers):

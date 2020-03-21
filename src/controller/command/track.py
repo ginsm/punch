@@ -4,7 +4,7 @@
 import re
 
 # Internal
-import view.commands.job as view
+import view.commands.track as view
 import model.db as db
 
 
@@ -12,10 +12,10 @@ import model.db as db
 # =====================================================
 def handler(command, argument):
   if argument is None:
-    return view.currentJob(str(db.get_state()['job']))
+    return view.jobNameRequired()
 
   if re.search('\/', argument) is not None:
-    return view.invalidJobName(argument)
+    return view.invalidCharacter(argument)
 
   db.set_state({'job': argument})
 
