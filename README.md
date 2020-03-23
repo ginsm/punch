@@ -4,6 +4,29 @@
 
 &nbsp;
 
+## Installation
+
+```bash
+# Clone the repository
+git clone git@github.com:ginsm/punch.git
+
+# Ensure the main file is an executable
+chmod +x ./punch/src/punch.py
+
+# Create ~/bin directory
+mkdir ~/bin
+
+# Create a symbolic link to the main file
+ln -s $PWD/punch/src/punch.py ~/bin/punch
+```
+Add the following to the end of your `.profile`, `.bashrc`, etc:
+
+`export PATH="~/bin:$PATH"`
+
+Restart your terminal or source the file with the above line.
+
+&nbsp;
+
 ## Commands
 > Usage: punch `<command>` `<argument>`
 
