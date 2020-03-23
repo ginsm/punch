@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # SECTION IMPORTS - External and internal imports.
 # =====================================================
 # External
