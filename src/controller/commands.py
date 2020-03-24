@@ -3,6 +3,11 @@
 # Internal
 import model.db as db
 import controller.command as command
+import command.punch as punch
+import command.track as track
+import command.rm as rm
+import command.list as _list
+import command.info as info
 import view.commands as view
 
 
@@ -16,16 +21,16 @@ def handle(command, argument):
     command = 'punch'
     
   handlers = {
-    'punch': command.punch.handler,
-    'p': command.punch.handler,
-    'track': command.track.handler,
-    't': command.track.handler,
-    'rm': command.rm.handler,
-    'r': command.rm.handler,
-    'list': command.listall.handler,
-    'l': command.listall.handler,
-    'info': command.info.handler,
-    'i': command.info.handler,
+    'punch': punch.handler,
+    'p': punch.handler,
+    'track': track.handler,
+    't': track.handler,
+    'rm': rm.handler,
+    'r': rm.handler,
+    'list': _list.handler,
+    'l': _list.handler,
+    'info': info.handler,
+    'i': info.handler,
   }
 
   if (command not in handlers):
